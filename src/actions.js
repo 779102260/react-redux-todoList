@@ -19,6 +19,12 @@ export function addTodo(text) {
 		text
 	}
 }
+export function addTodoAsync(text) {
+	return {
+		...addTodo(text),
+		type:'ADD_TODO_ASYNC'
+	}
+}
 export 
 function toggleTodo(listId) {
 	return {type:'TOGGLE_TODO',id:listId}

@@ -5,7 +5,7 @@ const Link=({active,children,onClick})=>{
 		return <span>{children}</span>
 	}
 	return (
-		<a href="#" onClick={e=>{
+		<a href="void:0" onClick={e=>{
 			e.preventDefault()
 			onClick()
 		}}>{children}</a>
