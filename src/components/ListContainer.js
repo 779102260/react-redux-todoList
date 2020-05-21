@@ -1,4 +1,4 @@
-import {connect} from 'react-redux'
+import {connect} from 'dva'
 import {toggleTodo} from '../actions'
 import List from './List'
 
@@ -19,7 +19,7 @@ const getVisibleTodos=(todos,filter)=>{
 }
 
 const mapStateToProps=(state)=>{
-	return {todos:getVisibleTodos(state.todos,state.visibilityFilter)}
+	return {todos:getVisibleTodos(state.list,state.filter)}
 }	
 
 // const mapDispatchToProps={
@@ -27,7 +27,7 @@ const mapStateToProps=(state)=>{
 // }
 const mapDispatchToProps=(dispatch)=>({
 	onTodoClick:(id)=>{
-		dispatch(toggleTodo(id))
+		dispatch({...toggleTodo(id), type: 'list/toggle'})
 	}
 })
 

@@ -1,4 +1,4 @@
-import { connect } from 'react-redux'
+import { connect } from 'dva'
 import { setVisibilityFilter } from '../actions'
 
 import Link from './Link'
@@ -9,7 +9,7 @@ const mapStateToProps=(state,ownProps)=>({
 
 const mapDispatchToProps=(dispatch,ownProps)=>({
 	onClick:()=>{
-		dispatch(setVisibilityFilter(ownProps.filter))
+		dispatch({...setVisibilityFilter(ownProps.filter), type: 'filter/set'})
 	}
 })
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import {connect} from 'dva'
 import {addTodo} from '../actions'
 
 let Add = ({dispatch})=>{//???
@@ -12,7 +12,7 @@ let Add = ({dispatch})=>{//???
 				if(!input.value){
 					return
 				}
-				dispatch(addTodo( input.value.trim() ) );
+				dispatch({ ...addTodo( input.value.trim() ), type: 'list/add' });
 				input.value='';
 			}}>
 				<input type="text" ref={node=>{

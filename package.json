@@ -8,6 +8,7 @@
     "react-scripts": "^3.4.1"
   },
   "dependencies": {
+    "dva": "^2.4.1",
     "prop-types": "^15.5.10",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
